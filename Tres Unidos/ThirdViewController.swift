@@ -10,6 +10,7 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     @IBOutlet weak var imageTest: UIImageView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +30,14 @@ class ThirdViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    @IBAction func addTriangle(_ sender: Any) {
+       }
+    
+    @IBAction func addRectangle(_ sender: Any) {
+    }
+    
+    @IBAction func addCircle(_ sender: Any) {
     }
 }

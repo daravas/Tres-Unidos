@@ -215,6 +215,35 @@
                                     <action selector="recomecar" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="Xt5-BO-VI4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NgF-VG-nIY">
+                                <rect key="frame" x="50" y="710" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="triangulo"/>
+                                <connections>
+                                    <action selector="addTriangle:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="2Qm-uh-frf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f6-bW-FXI">
+                                <rect key="frame" x="99" y="710" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="retangulo"/>
+                                <connections>
+                                    <action selector="addRectangle:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="phI-WA-xwP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmS-9c-zIV">
+                                <rect key="frame" x="148" y="709" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="circulo"/>
+                                <connections>
+                                    <action selector="addCircle:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="fi6-0o-mJg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVo-wU-ikb">
+                                <rect key="frame" x="189" y="710" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plus"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="CLV-fY-JV4"/>
@@ -249,4 +278,10 @@
             <point key="canvasLocation" x="1427.536231884058" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circulo" width="31" height="32"/>
+        <image name="plus" width="26" height="26"/>
+        <image name="retangulo" width="32" height="31"/>
+        <image name="triangulo" width="37" height="31"/>
+    </resources>
 </document>
