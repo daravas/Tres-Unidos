@@ -11,6 +11,10 @@ import UIKit
 class FirstViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var songTextField: UITextField!
     
+    var searchResult: [Search] = []
+    var songBpm: Int = 0
+    var artist: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //configuracao do text field
@@ -60,5 +64,44 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
         //mover para a posicao inicial
         self.view.frame.origin.y = 0
     }
+    
+    // MARK: - Acesso a API
+    
+    //Converter o nome da musica para o formato aceitado pela API
+    func convertSongName(songName:String) -> String{
+        //Substitui espacos por +
+        let songNameConverted = songName.replacingOccurrences(of: " ", with: "+")
+        return songNameConverted
+    }
+    
+    //Acessar a API e buscar pelo nome da musica
+    @IBAction func searchSong(_ sender: Any) {
+        let song = convertSongName(songName: songTextField.text!)
+        
+        let apiKey = "18f85ada3dd15f657ec71da0ee4773ee"
+        
+        let stringUrl = "https://api.getsongbpm.com/search/?api_key=\(apiKey)&type=song&lookup=\(song)"
+    
+        let url = URL(string:stringUrl)!
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: url) { data, response, error in
+                   do {
+                       let decoder = JSONDecoder()
+                       let results = try decoder.decode([Search].self, from: data!)
+                    self.searchResult = results
+                       DispatchQueue.main.async {
+                        //cell.textLabel?.text = films[indexPath.row].title
+                       }
+                   } catch {
+                       print("Erro: \(error.localizedDescription)")
+                   }
+               }
+               task.resume()
+               
+        
+        
+    }
+    
     
 }

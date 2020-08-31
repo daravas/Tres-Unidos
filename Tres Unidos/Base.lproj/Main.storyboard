@@ -71,6 +71,7 @@
                                     <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="searchSong:" destination="rOf-e5-gev" eventType="touchUpInside" id="gMx-kh-eWe"/>
                                     <segue destination="qtr-dB-6Ew" kind="show" id="Nyc-Nc-hlh"/>
                                 </connections>
                             </button>

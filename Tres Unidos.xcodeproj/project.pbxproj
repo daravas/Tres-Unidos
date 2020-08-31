@@ -35,6 +35,7 @@
 		08DB162A24F97A0200F92062 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB162924F97A0200F92062 /* FirstViewController.swift */; };
 		08DB162C24F97D7B00F92062 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08DB162B24F97D7B00F92062 /* Navigation.storyboard */; };
 		08EB86CB24FC957C00AD2ADF /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EB86CA24FC957B00AD2ADF /* ThirdViewController.swift */; };
+		7DEE41F724FD8BDA001D9DDC /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE41F624FD8BDA001D9DDC /* Songs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		08DB162924F97A0200F92062 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		08DB162B24F97D7B00F92062 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		08EB86CA24FC957B00AD2ADF /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		7DEE41F624FD8BDA001D9DDC /* Songs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				08DB15FA24F958BA00F92062 /* Info.plist */,
 				08DB160024F95C0A00F92062 /* Fonts */,
 				08DB162924F97A0200F92062 /* FirstViewController.swift */,
+				7DEE41F624FD8BDA001D9DDC /* Songs.swift */,
 				08DB162724F960B800F92062 /* SecondViewController.swift */,
 				08EB86CA24FC957B00AD2ADF /* ThirdViewController.swift */,
 			);
@@ -234,6 +237,7 @@
 				08DB162A24F97A0200F92062 /* FirstViewController.swift in Sources */,
 				08DB162824F960B800F92062 /* SecondViewController.swift in Sources */,
 				08DB15F124F958B900F92062 /* ViewController.swift in Sources */,
+				7DEE41F724FD8BDA001D9DDC /* Songs.swift in Sources */,
 				08DB15ED24F958B900F92062 /* AppDelegate.swift in Sources */,
 				08EB86CB24FC957C00AD2ADF /* ThirdViewController.swift in Sources */,
 				08DB15EF24F958B900F92062 /* SceneDelegate.swift in Sources */,
