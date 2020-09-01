@@ -178,11 +178,10 @@
                                 <state key="normal" title="Exportar">
                                     <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="exportarButton" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="MH0-Hv-HvZ"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVx-TK-ihL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="539"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome - Artista" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vp-6g-5QF">
                                 <rect key="frame" x="132" y="547" width="150" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -263,6 +262,17 @@
                                     <action selector="selecionarCor:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="dNv-dZ-HSs"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWh-1d-alp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="530"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVx-TK-ihL">
+                                        <rect key="frame" x="0.0" y="-9" width="414" height="539"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="CLV-fY-JV4"/>
@@ -276,6 +286,7 @@
                         <outlet property="cr5" destination="S9l-2j-xvw" id="kc2-0c-TX4"/>
                         <outlet property="cr6" destination="Ayj-FQ-rxR" id="hy6-r0-rln"/>
                         <outlet property="imageTest" destination="IVx-TK-ihL" id="F0W-H1-FAR"/>
+                        <outlet property="viewTest" destination="gWh-1d-alp" id="Aix-cn-meC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2VA-on-Lfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

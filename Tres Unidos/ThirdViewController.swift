@@ -16,6 +16,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var cr4: UIButton!
     @IBOutlet weak var cr5: UIButton!
     @IBOutlet weak var cr6: UIButton!
+    @IBOutlet weak var viewTest: UIView!
     
     var color = UIColor.black
     //exemplo de bpm, depois mudar para receber o bpm do request da api
@@ -107,5 +108,29 @@ class ThirdViewController: UIViewController {
         cr4.backgroundColor = cores.cor4
         cr5.backgroundColor = cores.cor5
         cr6.backgroundColor = cores.cor6
+    }
+    
+    //botao de exportar
+    @IBAction func exportarButton() {
+        //codigo antigo
+//        guard let image = viewTest.asImage() else {
+//            return
+//        }
+        let image = viewTest.asImage()
+        let activity = UIActivityViewController(activityItems: [image],
+                                                applicationActivities: nil)
+        //activity.popoverPresentationController?.sourceView = self.view
+        present(activity, animated: true)
+    }
+    
+}
+
+// para converter UIView em UIImage
+extension UIView {
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
+        }
     }
 }
