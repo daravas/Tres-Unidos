@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086832BB24FD7AEE001E2510 /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086832BA24FD7AEE001E2510 /* Cores.swift */; };
+		086832BF24FDA94D001E2510 /* CoresDados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086832BE24FDA94D001E2510 /* CoresDados.swift */; };
 		08DB15ED24F958B900F92062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB15EC24F958B900F92062 /* AppDelegate.swift */; };
 		08DB15EF24F958B900F92062 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB15EE24F958B900F92062 /* SceneDelegate.swift */; };
 		08DB15F124F958B900F92062 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB15F024F958B900F92062 /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		086832BA24FD7AEE001E2510 /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
+		086832BE24FDA94D001E2510 /* CoresDados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoresDados.swift; sourceTree = "<group>"; };
 		08DB15E924F958B900F92062 /* Tres Unidos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tres Unidos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08DB15EC24F958B900F92062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08DB15EE24F958B900F92062 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				08DB162924F97A0200F92062 /* FirstViewController.swift */,
 				08DB162724F960B800F92062 /* SecondViewController.swift */,
 				08EB86CA24FC957B00AD2ADF /* ThirdViewController.swift */,
+				086832BA24FD7AEE001E2510 /* Cores.swift */,
+				086832BE24FDA94D001E2510 /* CoresDados.swift */,
 			);
 			path = "Tres Unidos";
 			sourceTree = "<group>";
@@ -235,8 +241,10 @@
 				08DB162824F960B800F92062 /* SecondViewController.swift in Sources */,
 				08DB15F124F958B900F92062 /* ViewController.swift in Sources */,
 				08DB15ED24F958B900F92062 /* AppDelegate.swift in Sources */,
+				086832BF24FDA94D001E2510 /* CoresDados.swift in Sources */,
 				08EB86CB24FC957C00AD2ADF /* ThirdViewController.swift in Sources */,
 				08DB15EF24F958B900F92062 /* SceneDelegate.swift in Sources */,
+				086832BB24FD7AEE001E2510 /* Cores.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

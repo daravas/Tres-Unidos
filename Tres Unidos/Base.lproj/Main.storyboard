@@ -215,12 +215,66 @@
                                     <action selector="recomecar" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="Xt5-BO-VI4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5A-dQ-aPK" userLabel="Cr1">
+                                <rect key="frame" x="0.0" y="629" width="69" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="selecionarCor:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="Pf0-6t-RMx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LX-WZ-Aex">
+                                <rect key="frame" x="69" y="629" width="69" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="selecionarCor:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="5dv-Cv-w9w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKR-7Z-CQG">
+                                <rect key="frame" x="138" y="629" width="69" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="selecionarCor:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="wwg-UA-wco"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSI-iZ-gRF">
+                                <rect key="frame" x="207" y="629" width="69" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="selecionarCor:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="JHh-6s-dY4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9l-2j-xvw">
+                                <rect key="frame" x="276" y="629" width="69" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="selecionarCor:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="P23-E3-kuv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-FQ-rxR">
+                                <rect key="frame" x="345" y="629" width="69" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="selecionarCor:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="dNv-dZ-HSs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="CLV-fY-JV4"/>
                     </view>
                     <navigationItem key="navigationItem" id="V26-Dl-GXw"/>
                     <connections>
+                        <outlet property="cr1" destination="q5A-dQ-aPK" id="Sor-UO-78T"/>
+                        <outlet property="cr2" destination="3LX-WZ-Aex" id="RSs-cS-h4j"/>
+                        <outlet property="cr3" destination="sKR-7Z-CQG" id="LZY-O8-ynB"/>
+                        <outlet property="cr4" destination="TSI-iZ-gRF" id="ABL-Hf-FoS"/>
+                        <outlet property="cr5" destination="S9l-2j-xvw" id="kc2-0c-TX4"/>
+                        <outlet property="cr6" destination="Ayj-FQ-rxR" id="hy6-r0-rln"/>
                         <outlet property="imageTest" destination="IVx-TK-ihL" id="F0W-H1-FAR"/>
                     </connections>
                 </viewController>
