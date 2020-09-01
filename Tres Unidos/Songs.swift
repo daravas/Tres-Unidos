@@ -15,16 +15,16 @@ struct SearchResult:Codable{
 struct Song:Codable {
     var id: String
     var title: String
-    var uri: String
+    var uri: String?
     var artist:Artist
 }
 
 struct Artist:Codable {
     var id:String
     var name:String
-    var uri:String
-    var img:String
-    var genres:[String]
-    var from: String
-    var mbid: String
+    var uri:String?
+    var img:String?
+    var genres:[String]?
+    var from: String?
+    var mbid: String?
 }

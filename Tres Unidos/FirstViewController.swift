@@ -12,8 +12,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var songTextField: UITextField!
     
     var songs: [Song] = []
+    var firstSong : Song!
     var songBpm: Int = 0
     var artist: String = ""
+    var songTitle: String = ""
+    var albumCover: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,10 +96,15 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
                 let decoder = JSONDecoder()
                 let results = try decoder.decode(SearchResult.self, from: data!)
                 self.songs = results.search
+                
+                //A busca de uma musica pode retornar um array de musicas, mas vamos pegar apenas o primeiro resultado caso exista mais de uma musica com o mesmo nome
+                self.firstSong = results.search[0]
                 DispatchQueue.main.async {
-                    print(self.songs)
-                    //print(self.songs[0].title)
-                    //print(self.songs[0].artist.name)
+                    //print(self.songs)
+                    self.artist = self.firstSong.artist.name
+                    self.songTitle = self.firstSong.title
+                    print(self.artist)
+                    print(self.songTitle)
                 }
             } catch {
                 print("Erro: \(error.localizedDescription)")
@@ -104,9 +112,9 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
         }
         task.resume()
         
-        
-        
     }
+    
+    func 
     
     
 }
