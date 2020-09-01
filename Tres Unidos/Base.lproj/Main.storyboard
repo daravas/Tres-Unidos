@@ -235,16 +235,16 @@
                                     <action selector="addCircle:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="fi6-0o-mJg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVo-wU-ikb">
-                                <rect key="frame" x="189" y="710" width="41" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="plus"/>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X08-Cv-Krx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="539"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVo-wU-ikb">
+                                <rect key="frame" x="197" y="710" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plus"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="CLV-fY-JV4"/>
@@ -280,9 +280,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circulo" width="31" height="32"/>
-        <image name="plus" width="26" height="26"/>
-        <image name="retangulo" width="32" height="31"/>
-        <image name="triangulo" width="37" height="31"/>
+        <image name="circulo" width="124" height="128"/>
+        <image name="plus" width="104" height="104"/>
+        <image name="retangulo" width="128" height="124"/>
+        <image name="triangulo" width="144" height="123"/>
     </resources>
 </document>
