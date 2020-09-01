@@ -8,24 +8,23 @@
 
 import Foundation
 
-// MARK: - Search
-struct Search: Codable {
-    let search: [Songs]
+struct SearchResult:Codable{
+    var search: [Song]
 }
 
-// MARK: - Songs
-struct Songs: Codable {
-    let id, title: String
-    let uri: String
-    let artist: Artist
+struct Song:Codable {
+    var id: String
+    var title: String
+    var uri: String
+    var artist:Artist
 }
 
-// MARK: - Artist
-struct Artist: Codable {
-    let id, name: String
-    let uri, img: String
-    let genres: [String]
-    let from, mbid: String
+struct Artist:Codable {
+    var id:String
+    var name:String
+    var uri:String
+    var img:String
+    var genres:[String]
+    var from: String
+    var mbid: String
 }
-
-typealias SearchResults = [Search]

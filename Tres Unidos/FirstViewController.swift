@@ -11,7 +11,7 @@ import UIKit
 class FirstViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var songTextField: UITextField!
     
-    var searchResult: [Search] = []
+    var songs: [Song] = []
     var songBpm: Int = 0
     var artist: String = ""
     
@@ -76,29 +76,34 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
     
     //Acessar a API e buscar pelo nome da musica
     @IBAction func searchSong(_ sender: Any) {
+        print (songTextField.text)
         let song = convertSongName(songName: songTextField.text!)
+        print(song)
         
         let apiKey = "18f85ada3dd15f657ec71da0ee4773ee"
         
         let stringUrl = "https://api.getsongbpm.com/search/?api_key=\(apiKey)&type=song&lookup=\(song)"
-    
-        let url = URL(string:stringUrl)!
+        print (stringUrl)
+        
+        let url = URL(string: stringUrl)!
         let session = URLSession.shared
         
         let task = session.dataTask(with: url) { data, response, error in
-                   do {
-                       let decoder = JSONDecoder()
-                       let results = try decoder.decode([Search].self, from: data!)
-                    self.searchResult = results
-                       DispatchQueue.main.async {
-                        //cell.textLabel?.text = films[indexPath.row].title
-                       }
-                   } catch {
-                       print("Erro: \(error.localizedDescription)")
-                   }
-               }
-               task.resume()
-               
+            do {
+                let decoder = JSONDecoder()
+                let results = try decoder.decode(SearchResult.self, from: data!)
+                self.songs = results.search
+                DispatchQueue.main.async {
+                    print(self.songs)
+                    //print(self.songs[0].title)
+                    //print(self.songs[0].artist.name)
+                }
+            } catch {
+                print("Erro: \(error.localizedDescription)")
+            }
+        }
+        task.resume()
+        
         
         
     }
