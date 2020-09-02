@@ -10,8 +10,12 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     @IBOutlet weak var imageTest: UIImageView!
+
     @IBOutlet weak var artboardView: UIView!
     
+
+    var songBpm:Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
