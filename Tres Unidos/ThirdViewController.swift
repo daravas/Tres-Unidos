@@ -88,25 +88,25 @@ class ThirdViewController: UIViewController {
     
     //funcao para selecionar a paleta de cores
     func gerarCores() {
-        if bpm >= 40 && bpm < 60 {
+        if songBpm >= 40 && songBpm < 60 {
             //paleta 1
             cores(cores: CoresDados.paleta1)
-        } else if bpm >= 60 && bpm < 66 {
+        } else if songBpm >= 60 && songBpm < 66 {
             //paleta 2
             cores(cores: CoresDados.paleta2)
-        } else if bpm >= 66 && bpm < 76 {
+        } else if songBpm >= 66 && songBpm < 76 {
             //paleta 3
             cores(cores: CoresDados.paleta3)
-        } else if bpm >= 76 && bpm < 108 {
+        } else if songBpm >= 76 && songBpm < 108 {
             //paleta 4
             cores(cores: CoresDados.paleta4)
-        } else if bpm >= 108 && bpm < 120 {
+        } else if songBpm >= 108 && songBpm < 120 {
             //paleta 5
             cores(cores: CoresDados.paleta5)
-        } else if bpm >= 120 && bpm < 168 {
+        } else if songBpm >= 120 && songBpm < 168 {
             //paleta 6
             cores(cores: CoresDados.paleta6)
-        } else if bpm >= 168 && bpm < 200 {
+        } else if songBpm >= 168 && songBpm < 200 {
             //paleta 7
             cores(cores: CoresDados.paleta7)
         } else {
@@ -129,7 +129,7 @@ class ThirdViewController: UIViewController {
 //        guard let image = viewTest.asImage() else {
 //            return
 //        }
-        let image = viewTest.asImage()
+        let image = artboardView.asImage()
         let activity = UIActivityViewController(activityItems: [image],
                                                 applicationActivities: nil)
         //activity.popoverPresentationController?.sourceView = self.view
