@@ -37,9 +37,10 @@ class ThirdViewController: UIViewController {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
         
         let img = renderer.image { ctx in
+            //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX-51, y: artboardView.frame.midY-51, width: 51, height: 51)
             
-             ctx.cgContext.setFillColor(UIColor.red.cgColor)
+            ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.setLineWidth(5)
             ctx.cgContext.move(to: CGPoint(x: rectangle.minX,y: rectangle.minY))
@@ -50,65 +51,32 @@ class ThirdViewController: UIViewController {
         }
         
         let imagem = UIImageView.init(image: img)
+        
         artboardView.addSubview(imagem)
+        
         imagem.isUserInteractionEnabled = true
         
+        //adc gesto de arrastar
         let panTriangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-               imagem.addGestureRecognizer(panTriangle)
+        imagem.addGestureRecognizer(panTriangle)
+        
+        //adc redimensionar
         let pinchTriangle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
         imagem.addGestureRecognizer(pinchTriangle)
         
+        //adc rotacionar
         let rotateTriangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
         imagem.addGestureRecognizer(rotateTriangle)
         
         
     }
     
-    @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
-          // 1
-          let translation = gesture.translation(in: view)
-          
-          // 2
-          guard let gestureView = gesture.view else {
-              return
-          }
-          
-          gestureView.center = CGPoint(
-              x: gestureView.center.x + translation.x,
-              y: gestureView.center.y + translation.y
-          )
-          
-          // 3
-          gesture.setTranslation(.zero, in: view)
-      }
-    
-    @objc func handlePinch(_ gesture: UIPinchGestureRecognizer) {
-          guard let gestureView = gesture.view else {
-             return
-           }
-
-           gestureView.transform = gestureView.transform.scaledBy(
-             x: gesture.scale,
-             y: gesture.scale
-           )
-           gesture.scale = 1
-       }
-    
-    @objc func handleRotate(_ gesture: UIRotationGestureRecognizer) {
-           guard let gestureView = gesture.view else {
-              return
-            }
-
-            gestureView.transform = gestureView.transform.rotated(
-              by: gesture.rotation
-            )
-            gesture.rotation = 0
-         }
     
     @IBAction func addRectangle(_ sender: Any) {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
         
         let img = renderer.image { ctx in
+            //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX, y: artboardView.frame.midX, width: 51, height: 51)
             
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
@@ -125,9 +93,9 @@ class ThirdViewController: UIViewController {
         imagem.isUserInteractionEnabled = true
         
         let panRectangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-               imagem.addGestureRecognizer(panRectangle)
+        imagem.addGestureRecognizer(panRectangle)
         let pinchRectangle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
-             imagem.addGestureRecognizer(pinchRectangle)
+        imagem.addGestureRecognizer(pinchRectangle)
         
         let rotateRectangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
         imagem.addGestureRecognizer(rotateRectangle)
@@ -137,6 +105,7 @@ class ThirdViewController: UIViewController {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
         
         let img = renderer.image { ctx in
+            //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX, y: artboardView.frame.midY, width: 51, height: 51)
             
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
@@ -152,11 +121,52 @@ class ThirdViewController: UIViewController {
         imagem.isUserInteractionEnabled = true
         
         let panCircle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-               imagem.addGestureRecognizer(panCircle)
+        imagem.addGestureRecognizer(panCircle)
         let pinchCircle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
-             imagem.addGestureRecognizer(pinchCircle)
+        imagem.addGestureRecognizer(pinchCircle)
         
         let rotateCircle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
         imagem.addGestureRecognizer(rotateCircle)
     }
+    
+    @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
+           
+           let translation = gesture.translation(in: view)
+           
+           
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.center = CGPoint(
+               x: gestureView.center.x + translation.x,
+               y: gestureView.center.y + translation.y
+           )
+           
+           
+           gesture.setTranslation(.zero, in: view)
+       }
+       
+       @objc func handlePinch(_ gesture: UIPinchGestureRecognizer) {
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.transform = gestureView.transform.scaledBy(
+               x: gesture.scale,
+               y: gesture.scale
+           )
+           gesture.scale = 1
+       }
+       
+       @objc func handleRotate(_ gesture: UIRotationGestureRecognizer) {
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.transform = gestureView.transform.rotated(
+               by: gesture.rotation
+           )
+           gesture.rotation = 0
+       }
 }
