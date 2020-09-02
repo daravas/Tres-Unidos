@@ -71,7 +71,7 @@
                                     <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qtr-dB-6Ew" kind="show" id="Nyc-Nc-hlh"/>
+                                    <segue destination="IeW-aF-XWS" kind="show" identifier="ArtistSegue" id="SWJ-NI-clU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Procure por uma música que represente você hoje" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95T-J5-J6A">
@@ -102,10 +102,59 @@
             </objects>
             <point key="canvasLocation" x="2337.68115942029" y="137.94642857142856"/>
         </scene>
+        <!--Artist View Controller-->
+        <scene sceneID="d5Z-qc-B0V">
+            <objects>
+                <viewController storyboardIdentifier="ArtistViewController" id="IeW-aF-XWS" customClass="ArtistViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lqw-xN-b5E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPb-1r-DPF">
+                                <rect key="frame" x="50" y="731" width="314" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="24"/>
+                                <state key="normal" title="Avançar">
+                                    <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchInfoAboutMusic:" destination="IeW-aF-XWS" eventType="touchUpInside" id="pOs-Di-KGV"/>
+                                    <segue destination="qtr-dB-6Ew" kind="show" identifier="ResultSegue" id="RQv-hI-3yH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2pR-su-Hmb">
+                                <rect key="frame" x="50" y="632" width="314" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quem canta a música?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gid-mZ-ch0">
+                                <rect key="frame" x="50" y="572" width="283" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97645872830000002" green="0.97646445039999996" blue="0.97647935149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="x4X-Ty-oOM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1zl-WN-QIs">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="swO-3N-HiF"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="artistTextField" destination="2pR-su-Hmb" id="pzG-it-0os"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uaq-KW-tM3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2338" y="885"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="bn9-iQ-b1X">
             <objects>
-                <viewController id="qtr-dB-6Ew" customClass="SecondViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="qtr-dB-6Ew" customClass="SecondViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pDQ-au-und">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +168,7 @@
                                     <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Kjl-Zg-pqu" kind="show" id="SCP-xJ-r1s"/>
+                                    <segue destination="Kjl-Zg-pqu" kind="show" identifier="ArtSegue" id="SCP-xJ-r1s"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome da música" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds1-Jk-RAD">
@@ -155,7 +204,9 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="pBl-3z-tq3"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="artistNameLabel" destination="fzY-QH-Gdz" id="wFt-gZ-aLW"/>
                         <outlet property="capaDaMusica" destination="Gb0-Fe-1gg" id="Gir-ln-Dwm"/>
+                        <outlet property="songNameLabel" destination="ds1-Jk-RAD" id="CbB-g7-ofK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XC0-gw-eNX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -165,7 +216,7 @@
         <!--Third View Controller-->
         <scene sceneID="lT8-HW-3KG">
             <objects>
-                <viewController id="Kjl-Zg-pqu" customClass="ThirdViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" id="Kjl-Zg-pqu" customClass="ThirdViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZ0-8d-YED">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
