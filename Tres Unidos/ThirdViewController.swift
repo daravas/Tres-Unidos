@@ -55,6 +55,11 @@ class ThirdViewController: UIViewController {
         
         let panTriangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
                imagem.addGestureRecognizer(panTriangle)
+        let pinchTriangle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
+        imagem.addGestureRecognizer(pinchTriangle)
+        
+        let rotateTriangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
+        imagem.addGestureRecognizer(rotateTriangle)
         
         
     }
@@ -77,6 +82,29 @@ class ThirdViewController: UIViewController {
           gesture.setTranslation(.zero, in: view)
       }
     
+    @objc func handlePinch(_ gesture: UIPinchGestureRecognizer) {
+          guard let gestureView = gesture.view else {
+             return
+           }
+
+           gestureView.transform = gestureView.transform.scaledBy(
+             x: gesture.scale,
+             y: gesture.scale
+           )
+           gesture.scale = 1
+       }
+    
+    @objc func handleRotate(_ gesture: UIRotationGestureRecognizer) {
+           guard let gestureView = gesture.view else {
+              return
+            }
+
+            gestureView.transform = gestureView.transform.rotated(
+              by: gesture.rotation
+            )
+            gesture.rotation = 0
+         }
+    
     @IBAction func addRectangle(_ sender: Any) {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
         
@@ -98,6 +126,11 @@ class ThirdViewController: UIViewController {
         
         let panRectangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
                imagem.addGestureRecognizer(panRectangle)
+        let pinchRectangle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
+             imagem.addGestureRecognizer(pinchRectangle)
+        
+        let rotateRectangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
+        imagem.addGestureRecognizer(rotateRectangle)
     }
     
     @IBAction func addCircle(_ sender: Any) {
@@ -120,5 +153,10 @@ class ThirdViewController: UIViewController {
         
         let panCircle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
                imagem.addGestureRecognizer(panCircle)
+        let pinchCircle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
+             imagem.addGestureRecognizer(pinchCircle)
+        
+        let rotateCircle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
+        imagem.addGestureRecognizer(rotateCircle)
     }
 }
