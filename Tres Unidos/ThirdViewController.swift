@@ -51,9 +51,31 @@ class ThirdViewController: UIViewController {
         
         let imagem = UIImageView.init(image: img)
         artboardView.addSubview(imagem)
+        imagem.isUserInteractionEnabled = true
+        
+        let panTriangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+               imagem.addGestureRecognizer(panTriangle)
         
         
     }
+    
+    @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
+          // 1
+          let translation = gesture.translation(in: view)
+          
+          // 2
+          guard let gestureView = gesture.view else {
+              return
+          }
+          
+          gestureView.center = CGPoint(
+              x: gestureView.center.x + translation.x,
+              y: gestureView.center.y + translation.y
+          )
+          
+          // 3
+          gesture.setTranslation(.zero, in: view)
+      }
     
     @IBAction func addRectangle(_ sender: Any) {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
@@ -72,6 +94,10 @@ class ThirdViewController: UIViewController {
         //artboardView.image = img
         let imagem = UIImageView.init(image: img)
         artboardView.addSubview(imagem)
+        imagem.isUserInteractionEnabled = true
+        
+        let panRectangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+               imagem.addGestureRecognizer(panRectangle)
     }
     
     @IBAction func addCircle(_ sender: Any) {
@@ -90,5 +116,9 @@ class ThirdViewController: UIViewController {
         
         let imagem = UIImageView.init(image: img)
         artboardView.addSubview(imagem)
+        imagem.isUserInteractionEnabled = true
+        
+        let panCircle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+               imagem.addGestureRecognizer(panCircle)
     }
 }
