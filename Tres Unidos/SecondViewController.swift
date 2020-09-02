@@ -16,8 +16,8 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel?
     
     var artistName:String?
-    var songName:String = ""
-    var albumCoverLink:String = ""
+    var songName:String = "oi"
+    var albumCoverLink:String = "oi"
     var songBpm:Int = 0
     
     override func viewDidLoad() {
@@ -44,7 +44,17 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        songNameLabel!.text = songName
+        artistNameLabel!.text = artistName
+        print("oi")
     }
+    
+    //Passa o bpm para o próximo view controller
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "ArtSegue", case let nextVC = segue.destination as? ThirdViewController {
+            nextVC?.songBpm = self.songBpm
+         }
+     }
 
 }
 

@@ -73,8 +73,8 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
     var songAndArtist : SongAndArtist!
     var songBpmString: String = ""
     var songBpmInt: Int = 0
-    var artist: String = ""
-    var songTitle: String = ""
+    var artist: String = "oi"
+    var songTitle: String = "ainda n"
     var albumCover: String = ""
     
     let apiKey = "18f85ada3dd15f657ec71da0ee4773ee"
@@ -136,4 +136,5 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
 
         }
     }
+
 }
