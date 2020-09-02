@@ -37,7 +37,6 @@
 		08EB86CB24FC957C00AD2ADF /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EB86CA24FC957B00AD2ADF /* ThirdViewController.swift */; };
 		7DEE41F724FD8BDA001D9DDC /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE41F624FD8BDA001D9DDC /* Songs.swift */; };
 		7DEE41F924FE7301001D9DDC /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE41F824FE7301001D9DDC /* SongRequest.swift */; };
-		7DEE41FB24FF0C04001D9DDC /* SongAndArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE41FA24FF0C04001D9DDC /* SongAndArtist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +72,6 @@
 		08EB86CA24FC957B00AD2ADF /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		7DEE41F624FD8BDA001D9DDC /* Songs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
 		7DEE41F824FE7301001D9DDC /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
-		7DEE41FA24FF0C04001D9DDC /* SongAndArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongAndArtist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +116,6 @@
 				08DB162924F97A0200F92062 /* FirstViewController.swift */,
 				7DEE41F824FE7301001D9DDC /* SongRequest.swift */,
 				7DEE41F624FD8BDA001D9DDC /* Songs.swift */,
-				7DEE41FA24FF0C04001D9DDC /* SongAndArtist.swift */,
 				08DB162724F960B800F92062 /* SecondViewController.swift */,
 				08EB86CA24FC957B00AD2ADF /* ThirdViewController.swift */,
 			);
@@ -244,7 +241,6 @@
 				08DB162824F960B800F92062 /* SecondViewController.swift in Sources */,
 				08DB15F124F958B900F92062 /* ViewController.swift in Sources */,
 				7DEE41F724FD8BDA001D9DDC /* Songs.swift in Sources */,
-				7DEE41FB24FF0C04001D9DDC /* SongAndArtist.swift in Sources */,
 				7DEE41F924FE7301001D9DDC /* SongRequest.swift in Sources */,
 				08DB15ED24F958B900F92062 /* AppDelegate.swift in Sources */,
 				08EB86CB24FC957C00AD2ADF /* ThirdViewController.swift in Sources */,
