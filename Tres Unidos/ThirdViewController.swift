@@ -137,7 +137,14 @@ class ThirdViewController: UIViewController {
            guard let gestureView = gesture.view else {
                return
            }
-           
+//           func handlePan(pan: UIPanGestureRecognizer) {
+//               switch pan.state {
+//               case .Began:
+//                   if CGRectContainsPoint(self.pannableView.frame, pan.locationInView(self.pannableView)) {
+//                       // Gesture started inside the pannable view. Do your thing.
+//                   }
+//           }
+       
            gestureView.center = CGPoint(
                x: gestureView.center.x + translation.x,
                y: gestureView.center.y + translation.y

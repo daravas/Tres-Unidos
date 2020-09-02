@@ -235,7 +235,7 @@
                                     <action selector="addCircle:" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="fi6-0o-mJg"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X08-Cv-Krx">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X08-Cv-Krx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="539"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
