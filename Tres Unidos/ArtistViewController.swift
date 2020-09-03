@@ -66,74 +66,16 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
         self.view.frame.origin.y = 0
     }
     
-    
-    var songs: [Song] = []
-    var songsAndArtists : [SongAndArtist] = []
-    var firstSong : Song!
-    var songAndArtist : SongAndArtist!
-    var songBpmString: String = ""
-    var songBpmInt: Int = 0
-    var artist: String = "oi"
-    var songTitle: String = "ainda n"
-    var albumCover: String = ""
-    
-    let apiKey = "18f85ada3dd15f657ec71da0ee4773ee"
-    
-    // MARK: - Acesso a API
-    
-    //Converter o nome da musica para o formato aceitado pela API
-    func convertSongName(songName:String) -> String{
-        //Substitui espacos por +
-        let songNameConverted = songName.replacingOccurrences(of: " ", with: "+")
-        return songNameConverted
-    }
-    
-    
-    @IBAction func searchInfoAboutMusic(_ sender: Any) {
-        let songConverted = convertSongName(songName: song!)
-        let artistConverted = convertSongName(songName:self.artistTextField.text!)
-        let stringUrl = "https://api.getsongbpm.com/search/?api_key=\(apiKey)&type=both&lookup=song:\(songConverted)artist:\(artistConverted)"
-        print (stringUrl)
-        
-        let url = URL(string: stringUrl)!
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: url) { data, response, error in
-            do {
-                let decoder = JSONDecoder()
-                let results = try decoder.decode(SongAndArtistResult.self, from: data!)
-                self.songsAndArtists = results.search
-                self.songAndArtist = results.search [0]
-                DispatchQueue.main.async {
-                    self.artist = self.songAndArtist.artist.name
-                    self.songTitle = self.songAndArtist.songTitle
-                    self.songBpmString = self.songAndArtist.tempo
-                    //o valor do bpm retornado pelo json é uma string, queremos converter pra int para comparar depois
-                    self.songBpmInt = Int(self.songBpmString)!
-                    self.albumCover = self.songAndArtist.album.img!
-                    print(self.songTitle)
-                    print(self.artist)
-                    print(self.songBpmString)
-                    print(self.songBpmInt)
-                    print(self.albumCover)
-                }
-            } catch {
-                print("Erro: \(error.localizedDescription)")
-            }
-        }
-        task.resume()
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     //Passa o nome da música e o nome do artista e o bpm para o próximo view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ResultSegue", case let nextVC = segue.destination as? SecondViewController {
-            nextVC?.songName = self.songTitle
-            nextVC?.artistName = self.artist
-            nextVC?.songBpm = self.songBpmInt
-            nextVC?.albumCoverLink = self.albumCover
-            
-
+            nextVC?.songName = self.song!
+            nextVC?.artistName = self.artistTextField.text
         }
     }
 

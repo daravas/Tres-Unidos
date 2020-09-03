@@ -119,7 +119,6 @@
                                     <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchInfoAboutMusic:" destination="IeW-aF-XWS" eventType="touchUpInside" id="pOs-Di-KGV"/>
                                     <segue destination="qtr-dB-6Ew" kind="show" identifier="ResultSegue" id="RQv-hI-3yH"/>
                                 </connections>
                             </button>
@@ -171,15 +170,15 @@
                                     <segue destination="Kjl-Zg-pqu" kind="show" identifier="ArtSegue" id="SCP-xJ-r1s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome da música" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds1-Jk-RAD">
-                                <rect key="frame" x="103" y="524" width="209" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Poxa, nada encontrado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds1-Jk-RAD">
+                                <rect key="frame" x="65" y="524" width="286" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do artista" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-QH-Gdz">
-                                <rect key="frame" x="132" y="557" width="151" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tente novamente!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-QH-Gdz">
+                                <rect key="frame" x="123" y="557" width="169" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -192,7 +191,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gb0-Fe-1gg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="erro" translatesAutoresizingMaskIntoConstraints="NO" id="Gb0-Fe-1gg">
                                 <rect key="frame" x="50" y="201" width="314" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -205,8 +204,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="artistNameLabel" destination="fzY-QH-Gdz" id="wFt-gZ-aLW"/>
+                        <outlet property="botao" destination="aKz-vh-W6C" id="9qF-G4-113"/>
                         <outlet property="capaDaMusica" destination="Gb0-Fe-1gg" id="Gir-ln-Dwm"/>
                         <outlet property="songNameLabel" destination="ds1-Jk-RAD" id="CbB-g7-ofK"/>
+                        <outlet property="texto" destination="42J-ja-PXt" id="ntZ-wD-Ii1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XC0-gw-eNX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -353,13 +354,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="V26-Dl-GXw"/>
                     <connections>
+                        <outlet property="artboardView" destination="X08-Cv-Krx" id="uGm-G6-87X"/>
                         <outlet property="cr1" destination="q5A-dQ-aPK" id="Sor-UO-78T"/>
                         <outlet property="cr2" destination="3LX-WZ-Aex" id="RSs-cS-h4j"/>
                         <outlet property="cr3" destination="sKR-7Z-CQG" id="LZY-O8-ynB"/>
                         <outlet property="cr4" destination="TSI-iZ-gRF" id="ABL-Hf-FoS"/>
                         <outlet property="cr5" destination="S9l-2j-xvw" id="kc2-0c-TX4"/>
                         <outlet property="cr6" destination="Ayj-FQ-rxR" id="hy6-r0-rln"/>
-                        <outlet property="artboardView" destination="X08-Cv-Krx" id="uGm-G6-87X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2VA-on-Lfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -389,6 +390,7 @@
     </scenes>
     <resources>
         <image name="circulo" width="124" height="128"/>
+        <image name="erro" width="1833" height="1790"/>
         <image name="plus" width="104" height="104"/>
         <image name="retangulo" width="128" height="124"/>
         <image name="triangulo" width="144" height="123"/>

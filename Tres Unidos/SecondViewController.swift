@@ -10,10 +10,11 @@ import UIKit
 
 class SecondViewController: UIViewController {
     @IBOutlet weak var capaDaMusica: UIImageView!
-    
     @IBOutlet weak var songNameLabel: UILabel?
-   
     @IBOutlet weak var artistNameLabel: UILabel?
+    @IBOutlet weak var texto: UILabel!
+    @IBOutlet weak var botao: UIButton!
+    var tentarNovamente: UIButton = UIButton(frame: CGRect(x: 50, y: 731, width: 314, height: 52))
     
     var artistName:String?
     var songName:String = "oi"
@@ -22,40 +23,151 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //adicionando borda a imagem
-        guard let imageUrl:URL = URL(string: albumCoverLink) else {
-            return
-        }
-        capaDaMusica.load(url: imageUrl)
-        capaDaMusica.layer.borderWidth = 5
-        capaDaMusica.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        // Do any additional setup after loading the view.
-        songNameLabel!.text = songName
-        artistNameLabel!.text = artistName
-        print("cheguei no view controller do album")
-        print("result \(artistName)")
-        print("result \(songName)")
-        print("result \(songBpm)")
-        print("result \(albumCoverLink)")
+        //botao tentar novamente
+        tentarNovamente.addTarget(self, action: #selector(SecondViewController.tentar), for: .touchUpInside)
+        tentarNovamente.backgroundColor = .black
+        tentarNovamente.setTitleColor(.white, for: .normal)
+        tentarNovamente.setTitle("Tentar Novamente", for: .normal)
+        tentarNovamente.titleLabel?.font = UIFont(name: "Raleway", size: 20)
+        tentarNovamente.isHidden = true
+        self.view.addSubview(self.tentarNovamente)
+        
+        //tela de loading
+        loading()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        songNameLabel!.text = songName
-        artistNameLabel!.text = artistName
+        self.texto.isHidden = false
+        self.botao.isHidden = false
+        self.tentarNovamente.isHidden = true
+        
+        //chamando a busca
+        searchInfoAboutMusic()
+        //delay para atualizar a tela
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+            //atualizacao dos dados da tela
+            self.songNameLabel!.text = self.songTitle
+            self.artistNameLabel!.text = self.artist
+            guard let imageUrl:URL = URL(string: self.albumCover) else {
+                // se nao tem imagem entao nao tem a musica?
+                //colocando aqui  pra ve se desaparece o erro roxo que tinha quando eu tava usando essa linha abaixo no "catch"
+                self.dismissLoading()
+                self.texto.isHidden = true
+                self.botao.isHidden = true
+                self.tentarNovamente.isHidden = false
+                return
+            }
+            self.capaDaMusica.load(url: imageUrl)
+            self.capaDaMusica.layer.borderWidth = 5
+            self.capaDaMusica.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            self.dismissLoading()
+        }
         print("oi")
+        
     }
     
     //Passa o bpm para o próximo view controller
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if segue.identifier == "ArtSegue", case let nextVC = segue.destination as? ThirdViewController {
-            nextVC?.songBpm = self.songBpm
-         }
-     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ArtSegue", case let nextVC = segue.destination as? ThirdViewController {
+            nextVC?.songBpm = self.songBpmInt
+        }
+    }
+    
+    //view de loading
+    let teste: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 414, height: 896))
+    func loading() {
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 75, y: 425, width: 50, height: 50))
+        let textinho: UILabel = UILabel(frame: CGRect(x: 135, y: 433, width: 253, height: 31))
+        teste.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+        textinho.text = "Só um momentinho :)"
+        textinho.font = UIFont(name: "Raleway", size: 20)
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.large
+        loadingIndicator.startAnimating();
+        
+        teste.addSubview(textinho)
+        teste.addSubview(loadingIndicator)
+        
+        self.view.addSubview(teste)
+        
+    }
+    
+    //funcao de dismiss com animacao da tela de loading
+    func dismissLoading() {
+        UIView.animate(withDuration: 0.2, delay: 1, options: .curveEaseInOut, animations: {
+            self.teste.alpha = 0
+        }) { _ in
+            self.teste.isHidden = true
+        }
+    }
+    
+    //funcao de tentar novamente em caso de algum erro
+    @IBAction func tentar() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
+    //codigo ajustado
+    var songs: [Song] = []
+    var songsAndArtists : [SongAndArtist] = []
+    var firstSong : Song!
+    var songAndArtist : SongAndArtist!
+    var songBpmString: String = ""
+    var songBpmInt: Int = 0
+    var artist: String = "Tente novamente!"
+    var songTitle: String = "Poxa, nada encontrado"
+    var albumCover: String = ""
+    
+    let apiKey = "18f85ada3dd15f657ec71da0ee4773ee"
+    
+    // MARK: - Acesso a API
+    
+    //Converter o nome da musica para o formato aceitado pela API
+    func convertSongName(songName:String) -> String{
+        //Substitui espacos por +
+        let songNameConverted = songName.replacingOccurrences(of: " ", with: "+")
+        return songNameConverted
+    }
+    
+    
+    func searchInfoAboutMusic() {
+        let songConverted = convertSongName(songName: songName)
+        let artistConverted = convertSongName(songName:self.artistName!)
+        let stringUrl = "https://api.getsongbpm.com/search/?api_key=\(apiKey)&type=both&lookup=song:\(songConverted)artist:\(artistConverted)"
+        print (stringUrl)
+        
+        let url = URL(string: stringUrl)!
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: url) { data, response, error in
+            do {
+                let decoder = JSONDecoder()
+                let results = try decoder.decode(SongAndArtistResult.self, from: data!)
+                self.songsAndArtists = results.search
+                self.songAndArtist = results.search [0]
+                DispatchQueue.main.async {
+                    self.artist = self.songAndArtist.artist.name
+                    self.songTitle = self.songAndArtist.songTitle
+                    self.songBpmString = self.songAndArtist.tempo
+                    //o valor do bpm retornado pelo json é uma string, queremos converter pra int para comparar depois
+                    self.songBpmInt = Int(self.songBpmString)!
+                    self.albumCover = self.songAndArtist.album.img!
+                    print(self.songTitle)
+                    print(self.artist)
+                    print(self.songBpmString)
+                    print(self.songBpmInt)
+                    print(self.albumCover)
+                }
+            } catch {
+                print("Erro: \(error.localizedDescription)")
+            }
+        }
+        task.resume()
+    }
+    
 }
 
 extension UIImageView {
