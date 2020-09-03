@@ -159,6 +159,9 @@ class ThirdViewController: UIViewController {
         let rotateTriangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
         imagem.addGestureRecognizer(rotateTriangle)
         
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(sender:)))
+        imagem.addGestureRecognizer(tapRecognizer)
+
         
     }
     
@@ -191,6 +194,11 @@ class ThirdViewController: UIViewController {
         
         let rotateRectangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
         imagem.addGestureRecognizer(rotateRectangle)
+        
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(sender:)))
+        imagem.addGestureRecognizer(tapRecognizer)
+
     }
     
     @IBAction func addCircle(_ sender: Any) {
@@ -220,6 +228,11 @@ class ThirdViewController: UIViewController {
         
         let rotateCircle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
         imagem.addGestureRecognizer(rotateCircle)
+        
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(sender:)))
+        imagem.addGestureRecognizer(tapRecognizer)
+
     }
     
     @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
@@ -260,8 +273,18 @@ class ThirdViewController: UIViewController {
            )
            gesture.rotation = 0
        }
+    
+    
+      @objc func tap(sender: UITapGestureRecognizer) {
+        
+          artboardView.bringSubviewToFront(sender.view!)
+
+          
+      }
 
 }
+
+
 
 // para converter UIView em UIImage
 extension UIView {
