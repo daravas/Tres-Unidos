@@ -31,6 +31,8 @@ class ThirdViewController: UIViewController {
     
         songLabel.text = "\(songName) - \(artistName)"
         gerarCores()
+        
+        imagePicker.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -144,25 +146,10 @@ class ThirdViewController: UIViewController {
         let imagem = UIImageView.init(image: img)
         imagem.frame.origin = CGPoint(x: artboardView.frame.midX-50, y: artboardView.frame.midY-50)
         artboardView.addSubview(imagem)
-        
         imagem.isUserInteractionEnabled = true
         
-        //adc gesto de arrastar
-        let panTriangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        imagem.addGestureRecognizer(panTriangle)
-        
-        //adc redimensionar
-        let pinchTriangle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
-        imagem.addGestureRecognizer(pinchTriangle)
-        
-        //adc rotacionar
-        let rotateTriangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
-        imagem.addGestureRecognizer(rotateTriangle)
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(sender:)))
-        imagem.addGestureRecognizer(tapRecognizer)
+        chamadaGesture(imagem: imagem)
 
-        
     }
     
     
@@ -172,11 +159,10 @@ class ThirdViewController: UIViewController {
         let img = renderer.image { ctx in
             //posicao que é inicializado
             let rectangle = CGRect(x: 0, y: 0, width: 100, height: 100)
-            
+
             ctx.cgContext.setFillColor(color.cgColor)
             //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.setLineWidth(0)
-            
             ctx.cgContext.addRect(rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
         }
@@ -187,17 +173,7 @@ class ThirdViewController: UIViewController {
         artboardView.addSubview(imagem)
         imagem.isUserInteractionEnabled = true
         
-        let panRectangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        imagem.addGestureRecognizer(panRectangle)
-        let pinchRectangle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
-        imagem.addGestureRecognizer(pinchRectangle)
-        
-        let rotateRectangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
-        imagem.addGestureRecognizer(rotateRectangle)
-        
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(sender:)))
-        imagem.addGestureRecognizer(tapRecognizer)
+        chamadaGesture(imagem: imagem)
 
     }
     
@@ -221,25 +197,27 @@ class ThirdViewController: UIViewController {
         artboardView.addSubview(imagem)
         imagem.isUserInteractionEnabled = true
         
-        let panCircle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        imagem.addGestureRecognizer(panCircle)
-        let pinchCircle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
-        imagem.addGestureRecognizer(pinchCircle)
-        
-        let rotateCircle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
-        imagem.addGestureRecognizer(rotateCircle)
-        
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(sender:)))
-        imagem.addGestureRecognizer(tapRecognizer)
+        chamadaGesture(imagem: imagem)
 
     }
+    
+    var imagemAdd:UIImageView = UIImageView(frame: CGRect(x: 100, y: 200, width: 200, height: 200))
+    var imagePicker = UIImagePickerController()
+    @IBAction func addImage() {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
+        artboardView.addSubview(imagemAdd)
+        imagemAdd.isUserInteractionEnabled = true
+        
+        chamadaGesture(imagem: imagemAdd)
+
+    }
+    
     
     @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
            
            let translation = gesture.translation(in: view)
-           
-           
            guard let gestureView = gesture.view else {
                return
            }
@@ -247,8 +225,6 @@ class ThirdViewController: UIViewController {
                x: gestureView.center.x + translation.x,
                y: gestureView.center.y + translation.y
            )
-           
-           
            gesture.setTranslation(.zero, in: view)
        }
        
@@ -256,7 +232,6 @@ class ThirdViewController: UIViewController {
            guard let gestureView = gesture.view else {
                return
            }
-           
            gestureView.transform = gestureView.transform.scaledBy(
                x: gesture.scale,
                y: gesture.scale
@@ -279,12 +254,26 @@ class ThirdViewController: UIViewController {
         
           artboardView.bringSubviewToFront(sender.view!)
 
-          
       }
+    
+    func chamadaGesture(imagem: UIImageView){
+        //adc gesto de arrastar
+        let panTriangle = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        imagem.addGestureRecognizer(panTriangle)
+        
+        //adc redimensionar
+        let pinchTriangle = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
+        imagem.addGestureRecognizer(pinchTriangle)
+        
+        //adc rotacionar
+        let rotateTriangle = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate))
+        imagem.addGestureRecognizer(rotateTriangle)
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(sender:)))
+        imagem.addGestureRecognizer(tapRecognizer)
+    }
 
 }
-
-
 
 // para converter UIView em UIImage
 extension UIView {
@@ -293,5 +282,16 @@ extension UIView {
         return renderer.image { rendererContext in
             layer.render(in: rendererContext.cgContext)
         }
+    }
+}
+
+extension ThirdViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage {
+            imagemAdd.image = image
+        }
+        //chamada para caso adicione outra foto
+        imagemAdd = UIImageView(frame: CGRect(x: 100, y: 200, width: 200, height: 200))
+        dismiss(animated: true, completion: nil)
     }
 }
