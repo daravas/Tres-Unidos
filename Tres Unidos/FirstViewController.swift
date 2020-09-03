@@ -69,4 +69,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+    //limpar campo de text field
+    override func viewWillAppear(_ animated: Bool) {
+        self.songTextField.text = ""
+    }
 }

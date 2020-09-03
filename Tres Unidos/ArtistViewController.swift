@@ -69,6 +69,9 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        //limpar p campo de text field
+        self.artistTextField.text = ""
     }
     
     //Passa o nome da música e o nome do artista e o bpm para o próximo view controller
