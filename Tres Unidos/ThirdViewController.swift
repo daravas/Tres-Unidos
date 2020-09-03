@@ -18,8 +18,9 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var cr6: UIButton!
     @IBOutlet weak var artboardView: UIView!
  
-    var color = UIColor.black
+    var color:UIColor = UIColor.black
     var songBpm:Int = 0
+    //var capaDaMusica:UIImage
 
     
     override func viewDidLoad() {
@@ -126,9 +127,9 @@ class ThirdViewController: UIViewController {
             //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX-51, y: artboardView.frame.midY-51, width: 51, height: 51)
             
-            ctx.cgContext.setFillColor(UIColor.red.cgColor)
-            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(5)
+            ctx.cgContext.setFillColor(color.cgColor)
+            //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(0)
             ctx.cgContext.move(to: CGPoint(x: rectangle.minX,y: rectangle.minY))
             ctx.cgContext.addLine(to: CGPoint(x: rectangle.maxX, y: rectangle.midY))
             ctx.cgContext.addLine(to: CGPoint(x: rectangle.minX, y: rectangle.maxY))
@@ -165,9 +166,9 @@ class ThirdViewController: UIViewController {
             //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX, y: artboardView.frame.midX, width: 51, height: 51)
             
-            ctx.cgContext.setFillColor(UIColor.red.cgColor)
-            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(5)
+            ctx.cgContext.setFillColor(color.cgColor)
+            //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(0)
             
             ctx.cgContext.addRect(rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
@@ -194,9 +195,9 @@ class ThirdViewController: UIViewController {
             //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX, y: artboardView.frame.midY, width: 51, height: 51)
             
-            ctx.cgContext.setFillColor(UIColor.red.cgColor)
-            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(5)
+            ctx.cgContext.setFillColor(color.cgColor)
+            //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(0)
             
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
