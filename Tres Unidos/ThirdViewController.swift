@@ -125,11 +125,11 @@ class ThirdViewController: UIViewController {
     
     
     @IBAction func addTriangle(_ sender: Any) {
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 100))
         
         let img = renderer.image { ctx in
             //posicao que é inicializado
-            let rectangle = CGRect(x: artboardView.frame.midX-51, y: artboardView.frame.midY-51, width: 51, height: 51)
+            let rectangle = CGRect(x: 0, y: 0, width: 100, height: 100)
             
             ctx.cgContext.setFillColor(color.cgColor)
             //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
@@ -142,7 +142,7 @@ class ThirdViewController: UIViewController {
         }
         
         let imagem = UIImageView.init(image: img)
-        
+        imagem.frame.origin = CGPoint(x: artboardView.frame.midX-50, y: artboardView.frame.midY-50)
         artboardView.addSubview(imagem)
         
         imagem.isUserInteractionEnabled = true
@@ -164,11 +164,11 @@ class ThirdViewController: UIViewController {
     
     
     @IBAction func addRectangle(_ sender: Any) {
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 100))
         
         let img = renderer.image { ctx in
             //posicao que é inicializado
-            let rectangle = CGRect(x: artboardView.frame.midX, y: artboardView.frame.midX, width: 51, height: 51)
+            let rectangle = CGRect(x: 0, y: 0, width: 100, height: 100)
             
             ctx.cgContext.setFillColor(color.cgColor)
             //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
@@ -180,6 +180,7 @@ class ThirdViewController: UIViewController {
         
         //artboardView.image = img
         let imagem = UIImageView.init(image: img)
+        imagem.frame.origin = CGPoint(x: artboardView.frame.midX-50, y: artboardView.frame.midY-50)
         artboardView.addSubview(imagem)
         imagem.isUserInteractionEnabled = true
         
@@ -193,11 +194,11 @@ class ThirdViewController: UIViewController {
     }
     
     @IBAction func addCircle(_ sender: Any) {
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 100))
         
         let img = renderer.image { ctx in
             //posicao que é inicializado
-            let rectangle = CGRect(x: artboardView.frame.midX, y: artboardView.frame.midY, width: 51, height: 51)
+            let rectangle = CGRect(x: 0, y: 0, width: 100, height: 100)
             
             ctx.cgContext.setFillColor(color.cgColor)
             //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
@@ -208,6 +209,7 @@ class ThirdViewController: UIViewController {
         }
         
         let imagem = UIImageView.init(image: img)
+        imagem.frame.origin = CGPoint(x: artboardView.frame.midX-50, y: artboardView.frame.midY-50)
         artboardView.addSubview(imagem)
         imagem.isUserInteractionEnabled = true
         
@@ -228,14 +230,6 @@ class ThirdViewController: UIViewController {
            guard let gestureView = gesture.view else {
                return
            }
-//           func handlePan(pan: UIPanGestureRecognizer) {
-//               switch pan.state {
-//               case .Began:
-//                   if CGRectContainsPoint(self.pannableView.frame, pan.locationInView(self.pannableView)) {
-//                       // Gesture started inside the pannable view. Do your thing.
-//                   }
-//           }
-       
            gestureView.center = CGPoint(
                x: gestureView.center.x + translation.x,
                y: gestureView.center.y + translation.y
@@ -261,7 +255,6 @@ class ThirdViewController: UIViewController {
            guard let gestureView = gesture.view else {
                return
            }
-           
            gestureView.transform = gestureView.transform.rotated(
                by: gesture.rotation
            )
