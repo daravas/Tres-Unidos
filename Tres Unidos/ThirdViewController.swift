@@ -17,15 +17,19 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var cr5: UIButton!
     @IBOutlet weak var cr6: UIButton!
     @IBOutlet weak var artboardView: UIView!
- 
+    @IBOutlet weak var songLabel: UILabel!
+    
     var color:UIColor = UIColor.black
     var songBpm:Int = 0
     //var capaDaMusica:UIImage
+    var songName:String = ""
+    var artistName:String = ""
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        songLabel.text = "\(songName) - \(artistName)"
         gerarCores()
 
         // Do any additional setup after loading the view.

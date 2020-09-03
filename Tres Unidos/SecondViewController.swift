@@ -73,6 +73,8 @@ class SecondViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ArtSegue", case let nextVC = segue.destination as? ThirdViewController {
             nextVC?.songBpm = self.songBpmInt
+            nextVC?.songName = self.songTitle
+            nextVC?.artistName = self.artist
         }
     }
     

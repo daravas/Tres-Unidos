@@ -16,6 +16,9 @@
         <array key="Raleway-Regular.ttf">
             <string>Raleway-Regular</string>
         </array>
+        <array key="Raleway-SemiBold.ttf">
+            <string>Raleway-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -38,8 +41,8 @@
                                     <action selector="avancarPrimarioButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLz-5G-00P"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Texto do onboarding aqui :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYb-uf-KBG">
-                                <rect key="frame" x="50" y="536" width="314" height="152"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transforme música em arte" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYb-uf-KBG">
+                                <rect key="frame" x="50" y="575" width="314" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -236,10 +239,10 @@
                                     <action selector="exportarButton" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="MH0-Hv-HvZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome - Artista" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vp-6g-5QF">
-                                <rect key="frame" x="132" y="547" width="150" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome - Artista" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vp-6g-5QF">
+                                <rect key="frame" x="50" y="547" width="314" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -363,6 +366,7 @@
                         <outlet property="cr4" destination="TSI-iZ-gRF" id="ABL-Hf-FoS"/>
                         <outlet property="cr5" destination="S9l-2j-xvw" id="kc2-0c-TX4"/>
                         <outlet property="cr6" destination="Ayj-FQ-rxR" id="hy6-r0-rln"/>
+                        <outlet property="songLabel" destination="5vp-6g-5QF" id="XAO-0V-1hf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2VA-on-Lfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -393,7 +397,7 @@
     <resources>
         <image name="circulo" width="124" height="128"/>
         <image name="erro" width="1833" height="1790"/>
-        <image name="plus" width="32" height="31"/>
+        <image name="plus" width="128" height="124"/>
         <image name="retangulo" width="128" height="124"/>
         <image name="triangulo" width="144" height="123"/>
     </resources>
