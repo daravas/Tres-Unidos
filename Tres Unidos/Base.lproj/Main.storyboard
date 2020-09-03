@@ -352,6 +352,9 @@
                                 <rect key="frame" x="197" y="710" width="41" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="plus"/>
+                                <connections>
+                                    <action selector="addImage" destination="Kjl-Zg-pqu" eventType="touchUpInside" id="YeE-0w-3HM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
