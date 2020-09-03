@@ -9,7 +9,6 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
-    @IBOutlet weak var imageTest: UIImageView!
 
     @IBOutlet weak var cr1: UIButton!
     @IBOutlet weak var cr2: UIButton!
@@ -17,29 +16,18 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var cr4: UIButton!
     @IBOutlet weak var cr5: UIButton!
     @IBOutlet weak var cr6: UIButton!
- 
-    
-    var color = UIColor.black
-    
-
-
-
     @IBOutlet weak var artboardView: UIView!
-    
-
+ 
+    var color:UIColor = UIColor.black
     var songBpm:Int = 0
-
+    //var capaDaMusica:UIImage
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
+    
         gerarCores()
 
-
-        
         // Do any additional setup after loading the view.
     }
     
@@ -55,7 +43,6 @@ class ThirdViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-
     //selecionando uma cor da paleta de cores
     @IBAction func selecionarCor(_ sender: UIButton) {
         guard let button = sender as? UIButton else {
@@ -125,10 +112,6 @@ class ThirdViewController: UIViewController {
     
     //botao de exportar
     @IBAction func exportarButton() {
-        //codigo antigo
-//        guard let image = viewTest.asImage() else {
-//            return
-//        }
         let image = artboardView.asImage()
         let activity = UIActivityViewController(activityItems: [image],
                                                 applicationActivities: nil)
@@ -136,9 +119,7 @@ class ThirdViewController: UIViewController {
         present(activity, animated: true)
     }
     
-
-
-
+    
     @IBAction func addTriangle(_ sender: Any) {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 414, height: 539))
         
@@ -146,9 +127,9 @@ class ThirdViewController: UIViewController {
             //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX-51, y: artboardView.frame.midY-51, width: 51, height: 51)
             
-            ctx.cgContext.setFillColor(UIColor.red.cgColor)
-            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(5)
+            ctx.cgContext.setFillColor(color.cgColor)
+            //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(0)
             ctx.cgContext.move(to: CGPoint(x: rectangle.minX,y: rectangle.minY))
             ctx.cgContext.addLine(to: CGPoint(x: rectangle.maxX, y: rectangle.midY))
             ctx.cgContext.addLine(to: CGPoint(x: rectangle.minX, y: rectangle.maxY))
@@ -185,9 +166,9 @@ class ThirdViewController: UIViewController {
             //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX, y: artboardView.frame.midX, width: 51, height: 51)
             
-            ctx.cgContext.setFillColor(UIColor.red.cgColor)
-            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(5)
+            ctx.cgContext.setFillColor(color.cgColor)
+            //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(0)
             
             ctx.cgContext.addRect(rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
@@ -214,9 +195,9 @@ class ThirdViewController: UIViewController {
             //posicao que é inicializado
             let rectangle = CGRect(x: artboardView.frame.midX, y: artboardView.frame.midY, width: 51, height: 51)
             
-            ctx.cgContext.setFillColor(UIColor.red.cgColor)
-            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(5)
+            ctx.cgContext.setFillColor(color.cgColor)
+            //ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(0)
             
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
