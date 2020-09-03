@@ -81,5 +81,20 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
             nextVC?.artistName = self.artistTextField.text
         }
     }
+    
+    @IBAction func avancarButton() {
+        if artistTextField.text == "" {
+            alerta()
+        }
+    }
+    
+    //funcao de alerta
+    func alerta() {
+        let alerta = UIAlertController(title: "Alerta", message: "Preencha o campo de artista.", preferredStyle: UIAlertController.Style.alert)
+        let botaoOK = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        
+        alerta.addAction(botaoOK)
+        self.present(alerta, animated: true, completion: nil)
+    }
 
 }

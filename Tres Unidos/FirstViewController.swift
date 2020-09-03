@@ -73,4 +73,20 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
     override func viewWillAppear(_ animated: Bool) {
         self.songTextField.text = ""
     }
+    
+    // tratamento para campos vazios
+    @IBAction func avancarButton() {
+        if songTextField.text == "" {
+            alerta()
+        }
+    }
+    
+    //funcao de alerta
+    func alerta() {
+        let alerta = UIAlertController(title: "Alerta", message: "Preencha o campo de música.", preferredStyle: UIAlertController.Style.alert)
+        let botaoOK = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        
+        alerta.addAction(botaoOK)
+        self.present(alerta, animated: true, completion: nil)
+    }
 }

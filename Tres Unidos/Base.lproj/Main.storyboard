@@ -71,6 +71,7 @@
                                     <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="avancarButton" destination="rOf-e5-gev" eventType="touchUpInside" id="hed-oC-FTc"/>
                                     <segue destination="IeW-aF-XWS" kind="show" identifier="ArtistSegue" id="SWJ-NI-clU"/>
                                 </connections>
                             </button>
@@ -119,6 +120,7 @@
                                     <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="avancarButton" destination="IeW-aF-XWS" eventType="touchUpInside" id="DxT-CK-wHr"/>
                                     <segue destination="qtr-dB-6Ew" kind="show" identifier="ResultSegue" id="RQv-hI-3yH"/>
                                 </connections>
                             </button>
@@ -391,7 +393,7 @@
     <resources>
         <image name="circulo" width="124" height="128"/>
         <image name="erro" width="1833" height="1790"/>
-        <image name="plus" width="104" height="104"/>
+        <image name="plus" width="32" height="31"/>
         <image name="retangulo" width="128" height="124"/>
         <image name="triangulo" width="144" height="123"/>
     </resources>
