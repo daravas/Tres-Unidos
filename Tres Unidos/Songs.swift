@@ -39,11 +39,13 @@ struct SongAndArtistResult: Codable {
 
 // MARK: - SongAndArtist
 struct SongAndArtist: Codable {
-    var songID, songTitle: String
-    var songURI: String
-    var tempo, timeSig, keyOf, openKey: String
-    var artist: Artist
-    var album: Album
+    let songID, songTitle: String
+    let songURI: String
+    let tempo, timeSig: String?
+    let keyOf: String
+    let openKey: String?
+    let artist: Artist
+    let album: Album
     
     enum CodingKeys: String, CodingKey {
         case songID = "song_id"

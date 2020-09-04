@@ -24,7 +24,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
         <!--First View Controller-->
         <scene sceneID="xnx-rm-6ns">
             <objects>
-                <viewController id="rOf-e5-gev" customClass="FirstViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rOf-e5-gev" customClass="FirstViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i1m-vc-HyD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
         <!--Artist View Controller-->
         <scene sceneID="d5Z-qc-B0V">
             <objects>
-                <viewController storyboardIdentifier="ArtistViewController" id="IeW-aF-XWS" customClass="ArtistViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistViewController" id="IeW-aF-XWS" customClass="ArtistViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lqw-xN-b5E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +197,7 @@
         <!--Second View Controller-->
         <scene sceneID="bn9-iQ-b1X">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="qtr-dB-6Ew" customClass="SecondViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="qtr-dB-6Ew" customClass="SecondViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pDQ-au-und">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,13 +217,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poxa, nada encontrado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds1-Jk-RAD">
-                                <rect key="frame" x="64.5" y="524" width="285.5" height="31"/>
+                                <rect key="frame" x="71" y="524" width="272" height="31"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Tente novamente!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-QH-Gdz">
-                                <rect key="frame" x="123" y="557" width="168.5" height="24"/>
+                                <rect key="frame" x="128" y="557" width="158.5" height="24"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -277,7 +277,7 @@
         <!--Third View Controller-->
         <scene sceneID="lT8-HW-3KG">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" id="Kjl-Zg-pqu" customClass="ThirdViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" id="Kjl-Zg-pqu" customClass="ThirdViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZ0-8d-YED">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
