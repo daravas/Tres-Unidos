@@ -24,7 +24,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
         <!--First View Controller-->
         <scene sceneID="xnx-rm-6ns">
             <objects>
-                <viewController id="rOf-e5-gev" customClass="FirstViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rOf-e5-gev" customClass="FirstViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i1m-vc-HyD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
         <!--Artist View Controller-->
         <scene sceneID="d5Z-qc-B0V">
             <objects>
-                <viewController storyboardIdentifier="ArtistViewController" id="IeW-aF-XWS" customClass="ArtistViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistViewController" id="IeW-aF-XWS" customClass="ArtistViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lqw-xN-b5E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +197,7 @@
         <!--Second View Controller-->
         <scene sceneID="bn9-iQ-b1X">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" id="qtr-dB-6Ew" customClass="SecondViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="qtr-dB-6Ew" customClass="SecondViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pDQ-au-und">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,13 +217,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poxa, nada encontrado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds1-Jk-RAD">
-                                <rect key="frame" x="71" y="524.5" width="272" height="31"/>
+                                <rect key="frame" x="64.5" y="530.5" width="285.5" height="31"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Tente novamente!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-QH-Gdz">
-                                <rect key="frame" x="128" y="557.5" width="158.5" height="23.5"/>
+                                <rect key="frame" x="123" y="563.5" width="168.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -235,7 +235,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="erro" translatesAutoresizingMaskIntoConstraints="NO" id="Gb0-Fe-1gg">
-                                <rect key="frame" x="50" y="200.5" width="314" height="314"/>
+                                <rect key="frame" x="50" y="206.5" width="314" height="314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Gb0-Fe-1gg" secondAttribute="height" multiplier="1:1" id="Rdc-BO-XOT"/>
                                 </constraints>
@@ -248,7 +248,7 @@
                             <constraint firstItem="aKz-vh-W6C" firstAttribute="top" secondItem="42J-ja-PXt" secondAttribute="bottom" constant="16" id="2WJ-It-mdP"/>
                             <constraint firstItem="ds1-Jk-RAD" firstAttribute="centerX" secondItem="pDQ-au-und" secondAttribute="centerX" id="5Aj-9t-Pit"/>
                             <constraint firstItem="42J-ja-PXt" firstAttribute="leading" secondItem="Dnh-7H-UiI" secondAttribute="leading" constant="50" id="DpP-ZA-kaW"/>
-                            <constraint firstItem="42J-ja-PXt" firstAttribute="top" secondItem="fzY-QH-Gdz" secondAttribute="bottom" constant="86" id="P6S-9g-Elc"/>
+                            <constraint firstItem="42J-ja-PXt" firstAttribute="top" secondItem="fzY-QH-Gdz" secondAttribute="bottom" constant="80" id="P6S-9g-Elc"/>
                             <constraint firstItem="aKz-vh-W6C" firstAttribute="leading" secondItem="Dnh-7H-UiI" secondAttribute="leading" constant="50" id="QMJ-Zw-5Gg"/>
                             <constraint firstItem="fzY-QH-Gdz" firstAttribute="centerX" secondItem="pDQ-au-und" secondAttribute="centerX" id="RFg-D5-iSF"/>
                             <constraint firstItem="Dnh-7H-UiI" firstAttribute="bottom" secondItem="aKz-vh-W6C" secondAttribute="bottom" constant="80" id="XSg-1L-lnY"/>
@@ -277,7 +277,7 @@
         <!--Third View Controller-->
         <scene sceneID="lT8-HW-3KG">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" id="Kjl-Zg-pqu" customClass="ThirdViewController" customModule="Color_Beats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" id="Kjl-Zg-pqu" customClass="ThirdViewController" customModule="Tres_Unidos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZ0-8d-YED">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,9 +413,6 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X08-Cv-Krx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="539"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="X08-Cv-Krx" secondAttribute="height" multiplier="414:539" id="WTG-o1-YiM"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVo-wU-ikb">
                                 <rect key="frame" x="197" y="710" width="41" height="41"/>
@@ -452,7 +449,6 @@
                             <constraint firstItem="X08-Cv-Krx" firstAttribute="trailing" secondItem="Inh-N5-n7x" secondAttribute="trailing" id="ahX-1L-qVI"/>
                             <constraint firstItem="5vp-6g-5QF" firstAttribute="leading" secondItem="CLV-fY-JV4" secondAttribute="leading" constant="50" id="arL-EG-0RZ"/>
                             <constraint firstItem="CLV-fY-JV4" firstAttribute="trailing" secondItem="HgI-QX-KVM" secondAttribute="trailing" constant="50" id="bMN-pa-dPN"/>
-                            <constraint firstItem="Inh-N5-n7x" firstAttribute="top" secondItem="HgI-QX-KVM" secondAttribute="bottom" constant="9" id="bSe-hf-DmM"/>
                             <constraint firstItem="HgI-QX-KVM" firstAttribute="leading" secondItem="CLV-fY-JV4" secondAttribute="leading" constant="50" id="dnc-KU-waN"/>
                             <constraint firstItem="7f6-bW-FXI" firstAttribute="leading" secondItem="NgF-VG-nIY" secondAttribute="trailing" constant="8" id="glt-OT-cWV"/>
                             <constraint firstItem="CLV-fY-JV4" firstAttribute="trailing" secondItem="KzV-HE-uuB" secondAttribute="trailing" constant="50" id="j3c-tJ-MH6"/>
@@ -460,7 +456,6 @@
                             <constraint firstItem="gS9-IR-DNf" firstAttribute="top" secondItem="Inh-N5-n7x" secondAttribute="bottom" constant="24" id="jdC-Sg-NYd"/>
                             <constraint firstItem="Inh-N5-n7x" firstAttribute="top" secondItem="HgI-QX-KVM" secondAttribute="bottom" constant="9" id="k1H-Z7-3vf"/>
                             <constraint firstItem="KzV-HE-uuB" firstAttribute="top" secondItem="FVo-wU-ikb" secondAttribute="bottom" constant="24" id="msB-Bs-yVT"/>
-                            <constraint firstItem="5vp-6g-5QF" firstAttribute="top" secondItem="X08-Cv-Krx" secondAttribute="bottom" constant="8" id="p8s-qR-NvI"/>
                             <constraint firstItem="X08-Cv-Krx" firstAttribute="trailing" secondItem="CLV-fY-JV4" secondAttribute="trailing" id="q0H-zp-PXT"/>
                             <constraint firstItem="ud1-K6-G5N" firstAttribute="top" secondItem="KzV-HE-uuB" secondAttribute="bottom" constant="8" id="qdq-hH-XH5"/>
                             <constraint firstItem="NgF-VG-nIY" firstAttribute="leading" secondItem="CLV-fY-JV4" secondAttribute="leading" constant="50" id="s9q-vm-4cR"/>
