@@ -72,7 +72,7 @@ class SecondViewController: UIViewController {
     //Passa o bpm para o próximo view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ArtSegue", case let nextVC = segue.destination as? ThirdViewController {
-            nextVC?.songBpm = self.songBpmInt
+            nextVC?.songBpm = self.songBpmInt!
             nextVC?.songName = self.songTitle
             nextVC?.artistName = self.artist
         }
@@ -117,8 +117,8 @@ class SecondViewController: UIViewController {
     var songsAndArtists : [SongAndArtist] = []
     var firstSong : Song!
     var songAndArtist : SongAndArtist!
-    var songBpmString: String = ""
-    var songBpmInt: Int = 0
+    var songBpmString: String?
+    var songBpmInt: Int?
     var artist: String = "Tente novamente!"
     var songTitle: String = "Poxa, nada encontrado"
     var albumCover: String = ""
@@ -160,14 +160,15 @@ class SecondViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.artist = self.songAndArtist.artist.name
                     self.songTitle = self.songAndArtist.songTitle
-                    self.songBpmString = self.songAndArtist.tempo!
+                    //se o valor do bpm for null, salvar com o valor 0 para não quebrar a próxima tela
+                    self.songBpmString = self.songAndArtist.tempo ?? "0"
                     //o valor do bpm retornado pelo json é uma string, queremos converter pra int para comparar depois
-                    self.songBpmInt = Int(self.songBpmString)!
+                    self.songBpmInt = Int(self.songBpmString!)
                     self.albumCover = self.songAndArtist.album.img!
                     print(self.songTitle)
                     print(self.artist)
-                    print(self.songBpmString)
-                    print(self.songBpmInt)
+                    print(self.songBpmString!)
+                    print(self.songBpmInt!)
                     print(self.albumCover)
                 }
             } catch {
