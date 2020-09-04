@@ -35,6 +35,13 @@ class SecondViewController: UIViewController {
         
         //tela de loading
         loading()
+        
+        //AutoLayout loading
+//        teste.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        teste.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+    
+        
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,11 +96,12 @@ class SecondViewController: UIViewController {
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.large
         loadingIndicator.startAnimating();
-        
         teste.addSubview(textinho)
         teste.addSubview(loadingIndicator)
-        
+                
         self.view.addSubview(teste)
+        teste.center = self.view.center
+
         
     }
     
