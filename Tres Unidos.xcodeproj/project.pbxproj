@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		086832BA24FD7AEE001E2510 /* Cores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cores.swift; sourceTree = "<group>"; };
 		086832BE24FDA94D001E2510 /* CoresDados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoresDados.swift; sourceTree = "<group>"; };
-		08DB15E924F958B900F92062 /* Tres Unidos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tres Unidos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08DB15E924F958B900F92062 /* Color Beats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Beats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08DB15EC24F958B900F92062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08DB15EE24F958B900F92062 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		08DB15F024F958B900F92062 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		08DB15EA24F958B900F92062 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				08DB15E924F958B900F92062 /* Tres Unidos.app */,
+				08DB15E924F958B900F92062 /* Color Beats.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 			);
 			name = "Tres Unidos";
 			productName = "Tres Unidos";
-			productReference = 08DB15E924F958B900F92062 /* Tres Unidos.app */;
+			productReference = 08DB15E924F958B900F92062 /* Color Beats.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -399,7 +399,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.academy.Tres-Unidos";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color Beats";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -416,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.academy.Tres-Unidos";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color Beats";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
