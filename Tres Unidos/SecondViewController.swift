@@ -35,6 +35,13 @@ class SecondViewController: UIViewController {
         
         //tela de loading
         loading()
+        
+        //AutoLayout loading
+//        teste.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        teste.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+    
+        
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +79,7 @@ class SecondViewController: UIViewController {
     //Passa o bpm para o próximo view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ArtSegue", case let nextVC = segue.destination as? ThirdViewController {
-            nextVC?.songBpm = self.songBpmInt
+            nextVC?.songBpm = self.songBpmInt!
             nextVC?.songName = self.songTitle
             nextVC?.artistName = self.artist
         }
@@ -89,11 +96,12 @@ class SecondViewController: UIViewController {
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.large
         loadingIndicator.startAnimating();
-        
         teste.addSubview(textinho)
         teste.addSubview(loadingIndicator)
-        
+                
         self.view.addSubview(teste)
+        teste.center = self.view.center
+
         
     }
     
@@ -117,8 +125,8 @@ class SecondViewController: UIViewController {
     var songsAndArtists : [SongAndArtist] = []
     var firstSong : Song!
     var songAndArtist : SongAndArtist!
-    var songBpmString: String = ""
-    var songBpmInt: Int = 0
+    var songBpmString: String?
+    var songBpmInt: Int?
     var artist: String = "Tente novamente!"
     var songTitle: String = "Poxa, nada encontrado"
     var albumCover: String = ""
@@ -136,9 +144,16 @@ class SecondViewController: UIViewController {
     
     
     func searchInfoAboutMusic() {
-        let songConverted = convertSongName(songName: songName)
-        let artistConverted = convertSongName(songName:self.artistName!)
-        let stringUrl = "https://api.getsongbpm.com/search/?api_key=\(apiKey)&type=both&lookup=song:\(songConverted)artist:\(artistConverted)"
+        //let songConverted = convertSongName(songName: songName)
+        //let artistConverted = convertSongName(songName:self.artistName!)
+        
+        let songConverted = songName.stringByAddingPercentEncodingForFormData(plusForSpace: true)
+        let artistConverted = artistName!.stringByAddingPercentEncodingForFormData(plusForSpace: true)
+        
+        
+        
+        
+        let stringUrl = "https://api.getsongbpm.com/search/?api_key=\(apiKey)&type=both&lookup=song:\(songConverted!)artist:\(artistConverted!)"
         print (stringUrl)
         
         let url = URL(string: stringUrl)!
@@ -149,18 +164,19 @@ class SecondViewController: UIViewController {
                 let decoder = JSONDecoder()
                 let results = try decoder.decode(SongAndArtistResult.self, from: data!)
                 self.songsAndArtists = results.search
-                self.songAndArtist = results.search [0]
+                self.songAndArtist = results.search[0]
                 DispatchQueue.main.async {
                     self.artist = self.songAndArtist.artist.name
                     self.songTitle = self.songAndArtist.songTitle
-                    self.songBpmString = self.songAndArtist.tempo
+                    //se o valor do bpm for null, salvar com o valor 0 para não quebrar a próxima tela
+                    self.songBpmString = self.songAndArtist.tempo ?? "0"
                     //o valor do bpm retornado pelo json é uma string, queremos converter pra int para comparar depois
-                    self.songBpmInt = Int(self.songBpmString)!
+                    self.songBpmInt = Int(self.songBpmString!)
                     self.albumCover = self.songAndArtist.album.img!
                     print(self.songTitle)
                     print(self.artist)
-                    print(self.songBpmString)
-                    print(self.songBpmInt)
+                    print(self.songBpmString!)
+                    print(self.songBpmInt!)
                     print(self.albumCover)
                 }
             } catch {
@@ -185,3 +201,30 @@ extension UIImageView {
         }
     }
 }
+
+extension String {
+    func stringByAddingPercentEncodingForRFC3986() -> String? {
+        let unreserved = "-._~/?"
+        let allowed = NSMutableCharacterSet.alphanumeric()
+        allowed.addCharacters(in: unreserved)
+        return addingPercentEncoding(withAllowedCharacters: allowed as CharacterSet)
+    }
+    
+    public func stringByAddingPercentEncodingForFormData(plusForSpace: Bool=false) -> String? {
+        let unreserved = "*-._çã"
+        let allowed = NSMutableCharacterSet.alphanumeric()
+        allowed.addCharacters(in: unreserved)
+        
+        if plusForSpace {
+            allowed.addCharacters(in: " ")
+        }
+        
+        var encoded = addingPercentEncoding(withAllowedCharacters: allowed as CharacterSet)
+        if plusForSpace {
+            encoded = encoded?.replacingOccurrences(of: " ", with: "+")
+        }
+        return encoded
+    }
+}
+
+
