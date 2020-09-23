@@ -19,7 +19,8 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
         artistTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: artistTextField.frame.height))
         artistTextField.leftViewMode = .always
         artistTextField.layer.borderWidth = 2
-        artistTextField.attributedPlaceholder = NSAttributedString(string: "Escreva o nome do artista aqui", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        artistTextField.layer.borderColor = UIColor(named: "button")?.cgColor
+        artistTextField.attributedPlaceholder = NSAttributedString(string: "Escreva o nome do artista aqui", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button")!])
         
         //tapGesture para clicar fora do keyboard
         configureTapGesture()
@@ -97,4 +98,8 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
         self.present(alerta, animated: true, completion: nil)
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        artistTextField.layer.borderColor = UIColor(named: "button")?.cgColor
+    }
 }

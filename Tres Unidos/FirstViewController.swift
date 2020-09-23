@@ -17,7 +17,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
         songTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: songTextField.frame.height))
         songTextField.leftViewMode = .always
         songTextField.layer.borderWidth = 2
-        songTextField.attributedPlaceholder = NSAttributedString(string: "Escreva o nome da música aqui", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        songTextField.layer.borderColor = UIColor(named: "button")?.cgColor
+        songTextField.attributedPlaceholder = NSAttributedString(string: "Escreva o nome da música aqui", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button")!])
         
         //tapGesture para clicar fora do keyboard
         configureTapGesture()
@@ -88,5 +89,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
         
         alerta.addAction(botaoOK)
         self.present(alerta, animated: true, completion: nil)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        songTextField.layer.borderColor = UIColor(named: "button")?.cgColor
     }
 }
