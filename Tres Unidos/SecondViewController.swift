@@ -26,8 +26,8 @@ class SecondViewController: UIViewController {
         
         //botao tentar novamente
         tentarNovamente.addTarget(self, action: #selector(SecondViewController.tentar), for: .touchUpInside)
-        tentarNovamente.backgroundColor = .black
-        tentarNovamente.setTitleColor(.white, for: .normal)
+        tentarNovamente.backgroundColor = UIColor(named: "button")
+        tentarNovamente.setTitleColor(UIColor(named: "background"), for: .normal)
         tentarNovamente.setTitle("Tentar Novamente", for: .normal)
         tentarNovamente.titleLabel?.font = UIFont(name: "Raleway", size: 20)
         tentarNovamente.isHidden = true
@@ -69,7 +69,7 @@ class SecondViewController: UIViewController {
             }
             self.capaDaMusica.load(url: imageUrl)
             self.capaDaMusica.layer.borderWidth = 5
-            self.capaDaMusica.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            self.capaDaMusica.layer.borderColor = UIColor(named: "button")?.cgColor
             self.dismissLoading()
         }
         print("oi")
@@ -90,7 +90,7 @@ class SecondViewController: UIViewController {
     func loading() {
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 75, y: 425, width: 50, height: 50))
         let textinho: UILabel = UILabel(frame: CGRect(x: 135, y: 433, width: 253, height: 31))
-        teste.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+        teste.backgroundColor = UIColor(named: "background")
         textinho.text = "Só um momentinho :)"
         textinho.font = UIFont(name: "Raleway", size: 20)
         loadingIndicator.hidesWhenStopped = true
@@ -184,6 +184,11 @@ class SecondViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        capaDaMusica.layer.borderColor = UIColor(named: "button")?.cgColor
     }
     
 }
