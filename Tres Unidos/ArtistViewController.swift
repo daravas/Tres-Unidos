@@ -20,7 +20,7 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
         artistTextField.leftViewMode = .always
         artistTextField.layer.borderWidth = 2
         artistTextField.layer.borderColor = UIColor(named: "button")?.cgColor
-        artistTextField.attributedPlaceholder = NSAttributedString(string: "Escreva o nome do artista aqui", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button")!])
+        artistTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("placeholderArtist", comment: ""), attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button")!])
         
         //tapGesture para clicar fora do keyboard
         configureTapGesture()
@@ -31,11 +31,7 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
         //text field movimentar de acordo com o keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(ArtistViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ArtistViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        print("esse eh o nome da musica que veio do outro vc")
-        print(song)
-        
-        // Do any additional setup after loading the view.
+  
     }
     
     //tapGesture para dar dismiss no keyboard ao clicar fora dele
@@ -91,7 +87,7 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
     
     //funcao de alerta
     func alerta() {
-        let alerta = UIAlertController(title: "Alerta", message: "Preencha o campo de artista.", preferredStyle: UIAlertController.Style.alert)
+        let alerta = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("alertArtist", comment: ""), preferredStyle: UIAlertController.Style.alert)
         let botaoOK = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         
         alerta.addAction(botaoOK)

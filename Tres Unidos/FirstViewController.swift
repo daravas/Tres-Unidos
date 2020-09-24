@@ -18,7 +18,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
         songTextField.leftViewMode = .always
         songTextField.layer.borderWidth = 2
         songTextField.layer.borderColor = UIColor(named: "button")?.cgColor
-        songTextField.attributedPlaceholder = NSAttributedString(string: "Escreva o nome da música aqui", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button")!])
+        songTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("placeholderSong", comment: ""), attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button")!])
         
         //tapGesture para clicar fora do keyboard
         configureTapGesture()
@@ -29,9 +29,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
         //text field movimentar de acordo com o keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
-        // Do any additional setup after loading the view.
+
     }
     
     //tapGesture para dar dismiss no keyboard ao clicar fora dele
@@ -84,7 +82,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
     
     //funcao de alerta
     func alerta() {
-        let alerta = UIAlertController(title: "Alerta", message: "Preencha o campo de música.", preferredStyle: UIAlertController.Style.alert)
+        let alerta = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("alertSong", comment: ""), preferredStyle: UIAlertController.Style.alert)
         let botaoOK = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         
         alerta.addAction(botaoOK)

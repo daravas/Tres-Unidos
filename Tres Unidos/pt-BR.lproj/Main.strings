@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "É essa música que você está procurando?"; ObjectID = "42J-ja-PXt"; */
+"42J-ja-PXt.text" = "É essa música que você está procurando?";
+
+/* Class = "UIButton"; normalTitle = "Avançar"; ObjectID = "57h-Lr-cUH"; */
+"57h-Lr-cUH.normalTitle" = "Avançar";
+
+/* Class = "UILabel"; text = "Nome - Artista"; ObjectID = "5vp-6g-5QF"; */
+"5vp-6g-5QF.text" = "Nome - Artista";
+
+/* Class = "UIBarButtonItem"; title = "Voltar"; ObjectID = "6Np-lm-xNM"; */
+"6Np-lm-xNM.title" = "Voltar";
+
+/* Class = "UILabel"; text = "Procure por uma música que represente você hoje"; ObjectID = "95T-J5-J6A"; */
+"95T-J5-J6A.text" = "Procure por uma música que represente você hoje";
+
+/* Class = "UILabel"; text = "Selecione a cor"; ObjectID = "HgI-QX-KVM"; */
+"HgI-QX-KVM.text" = "Selecione a cor";
+
+/* Class = "UILabel"; text = "Transforme música em arte"; ObjectID = "IYb-uf-KBG"; */
+"IYb-uf-KBG.text" = "Transforme música em arte";
+
+/* Class = "UIButton"; normalTitle = "Avançar"; ObjectID = "KPb-1r-DPF"; */
+"KPb-1r-DPF.normalTitle" = "Avançar";
+
+/* Class = "UIButton"; normalTitle = "Exportar"; ObjectID = "KzV-HE-uuB"; */
+"KzV-HE-uuB.normalTitle" = "Exportar";
+
+/* Class = "UIButton"; normalTitle = "Avançar"; ObjectID = "aKz-vh-W6C"; */
+"aKz-vh-W6C.normalTitle" = "Avançar";
+
+/* Class = "UILabel"; text = "Poxa, nada encontrado"; ObjectID = "ds1-Jk-RAD"; */
+"ds1-Jk-RAD.text" = "Poxa, nada encontrado";
+
+/* Class = "UILabel"; text = "Tente novamente!"; ObjectID = "fzY-QH-Gdz"; */
+"fzY-QH-Gdz.text" = "Tente novamente!";
+
+/* Class = "UILabel"; text = "Adicionar formas/imagens"; ObjectID = "gS9-IR-DNf"; */
+"gS9-IR-DNf.text" = "Adicionar formas/imagens";
+
+/* Class = "UILabel"; text = "Quem canta a música?"; ObjectID = "gid-mZ-ch0"; */
+"gid-mZ-ch0.text" = "Quem canta a música?";
+
+/* Class = "UIBarButtonItem"; title = "Voltar"; ObjectID = "pBl-3z-tq3"; */
+"pBl-3z-tq3.title" = "Voltar";
+
+/* Class = "UIBarButtonItem"; title = "Voltar"; ObjectID = "swO-3N-HiF"; */
+"swO-3N-HiF.title" = "Voltar";
+
+/* Class = "UIButton"; normalTitle = "Tentar com uma nova música"; ObjectID = "ud1-K6-G5N"; */
+"ud1-K6-G5N.normalTitle" = "Tentar com uma nova música";
+
+/* Class = "UIButton"; normalTitle = "Avançar"; ObjectID = "zdX-TB-VQ7"; */
+"zdX-TB-VQ7.normalTitle" = "Avançar";
