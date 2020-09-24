@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Tres Unidos
+
+  Created by Evaldo Garcia de Souza Júnior on 24/09/20.
+  Copyright © 2020 Evaldo Garcia de Souza Júnior. All rights reserved.
+*/
+"songLabel" = "Aah, nothing found";
+"artistLabel" = "Try again!";
+"loadingText" = "Hang on a second :)";
+"tryAgainButton" = "Try Again";
+"placeholderSong" = "Type the name of the song here";
+"placeholderArtist" = "Type the name of the artist here";
+"alert" = "Alert";
+"alertSong" = "Complete the song field.";
+"alertArtist" = "Complete the artist field.";

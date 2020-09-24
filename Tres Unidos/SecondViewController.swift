@@ -28,20 +28,13 @@ class SecondViewController: UIViewController {
         tentarNovamente.addTarget(self, action: #selector(SecondViewController.tentar), for: .touchUpInside)
         tentarNovamente.backgroundColor = UIColor(named: "button")
         tentarNovamente.setTitleColor(UIColor(named: "background"), for: .normal)
-        tentarNovamente.setTitle("Tentar Novamente", for: .normal)
+        tentarNovamente.setTitle(NSLocalizedString("tryAgainButton", comment: ""), for: .normal)
         tentarNovamente.titleLabel?.font = UIFont(name: "Raleway", size: 20)
         tentarNovamente.isHidden = true
         self.view.addSubview(self.tentarNovamente)
         
         //tela de loading
         loading()
-        
-        //AutoLayout loading
-//        teste.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        teste.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-    
-        
-      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,8 +49,13 @@ class SecondViewController: UIViewController {
         //delay para atualizar a tela
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             //atualizacao dos dados da tela
-            self.songNameLabel!.text = self.songTitle
-            self.artistNameLabel!.text = self.artist
+            if self.songTitle == "" {
+                self.songNameLabel!.text = NSLocalizedString("songLabel", comment: "")
+                self.artistNameLabel!.text = NSLocalizedString("artistLabel", comment: "")
+            } else {
+                self.songNameLabel!.text = self.songTitle
+                self.artistNameLabel!.text = self.artist
+            }
             guard let imageUrl:URL = URL(string: self.albumCover) else {
                 // se nao tem imagem entao nao tem a musica?
                 //colocando aqui  pra ve se desaparece o erro roxo que tinha quando eu tava usando essa linha abaixo no "catch"
@@ -72,7 +70,6 @@ class SecondViewController: UIViewController {
             self.capaDaMusica.layer.borderColor = UIColor(named: "button")?.cgColor
             self.dismissLoading()
         }
-        print("oi")
         
     }
     
@@ -86,21 +83,21 @@ class SecondViewController: UIViewController {
     }
     
     //view de loading
-    let teste: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 414, height: 896))
+    let loadingVIew: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 414, height: 896))
     func loading() {
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 75, y: 425, width: 50, height: 50))
         let textinho: UILabel = UILabel(frame: CGRect(x: 135, y: 433, width: 253, height: 31))
-        teste.backgroundColor = UIColor(named: "background")
-        textinho.text = "Só um momentinho :)"
+        loadingVIew.backgroundColor = UIColor(named: "background")
+        textinho.text = NSLocalizedString("loadingText", comment: "")
         textinho.font = UIFont(name: "Raleway", size: 20)
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.large
         loadingIndicator.startAnimating();
-        teste.addSubview(textinho)
-        teste.addSubview(loadingIndicator)
+        loadingVIew.addSubview(textinho)
+        loadingVIew.addSubview(loadingIndicator)
                 
-        self.view.addSubview(teste)
-        teste.center = self.view.center
+        self.view.addSubview(loadingVIew)
+        loadingVIew.center = self.view.center
 
         
     }
@@ -108,9 +105,9 @@ class SecondViewController: UIViewController {
     //funcao de dismiss com animacao da tela de loading
     func dismissLoading() {
         UIView.animate(withDuration: 0.2, delay: 1, options: .curveEaseInOut, animations: {
-            self.teste.alpha = 0
+            self.loadingVIew.alpha = 0
         }) { _ in
-            self.teste.isHidden = true
+            self.loadingVIew.isHidden = true
         }
     }
     
@@ -127,8 +124,8 @@ class SecondViewController: UIViewController {
     var songAndArtist : SongAndArtist!
     var songBpmString: String?
     var songBpmInt: Int?
-    var artist: String = "Tente novamente!"
-    var songTitle: String = "Poxa, nada encontrado"
+    var artist: String = ""
+    var songTitle: String = ""
     var albumCover: String = ""
     
     let apiKey = "18f85ada3dd15f657ec71da0ee4773ee"
@@ -144,17 +141,11 @@ class SecondViewController: UIViewController {
     
     
     func searchInfoAboutMusic() {
-        //let songConverted = convertSongName(songName: songName)
-        //let artistConverted = convertSongName(songName:self.artistName!)
         
         let songConverted = songName.stringByAddingPercentEncodingForFormData(plusForSpace: true)
         let artistConverted = artistName!.stringByAddingPercentEncodingForFormData(plusForSpace: true)
         
-        
-        
-        
         let stringUrl = "https://api.getsongbpm.com/search/?api_key=\(apiKey)&type=both&lookup=song:\(songConverted!)artist:\(artistConverted!)"
-        print (stringUrl)
         
         let url = URL(string: stringUrl)!
         let session = URLSession.shared
@@ -173,11 +164,6 @@ class SecondViewController: UIViewController {
                     //o valor do bpm retornado pelo json é uma string, queremos converter pra int para comparar depois
                     self.songBpmInt = Int(self.songBpmString!)
                     self.albumCover = self.songAndArtist.album.img!
-                    print(self.songTitle)
-                    print(self.artist)
-                    print(self.songBpmString!)
-                    print(self.songBpmInt!)
-                    print(self.albumCover)
                 }
             } catch {
                 print("Erro: \(error.localizedDescription)")

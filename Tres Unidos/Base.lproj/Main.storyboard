@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transforme música em arte" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYb-uf-KBG">
-                                <rect key="frame" x="50" y="612" width="314" height="94"/>
+                                <rect key="frame" x="50" y="612.5" width="314" height="93.5"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="40"/>
                                 <color key="textColor" name="button"/>
                                 <nil key="highlightedColor"/>
@@ -94,7 +94,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Procure por uma música que represente você hoje" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95T-J5-J6A">
-                                <rect key="frame" x="50" y="549.5" width="314" height="56.5"/>
+                                <rect key="frame" x="50" y="550" width="314" height="56"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
                                 <color key="textColor" name="button"/>
                                 <nil key="highlightedColor"/>
@@ -171,7 +171,7 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quem canta a música?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gid-mZ-ch0">
-                                <rect key="frame" x="50" y="577.5" width="314" height="28.5"/>
+                                <rect key="frame" x="50" y="578" width="314" height="28"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
                                 <color key="textColor" name="button"/>
                                 <nil key="highlightedColor"/>
@@ -228,13 +228,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poxa, nada encontrado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds1-Jk-RAD">
-                                <rect key="frame" x="64.5" y="530.5" width="285.5" height="31"/>
+                                <rect key="frame" x="71" y="530.5" width="272" height="31"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="26"/>
                                 <color key="textColor" name="button"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Tente novamente!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-QH-Gdz">
-                                <rect key="frame" x="123" y="563.5" width="168.5" height="23.5"/>
+                                <rect key="frame" x="128" y="563.5" width="158.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="20"/>
                                 <color key="textColor" name="button"/>
                                 <nil key="highlightedColor"/>
@@ -334,7 +334,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud1-K6-G5N">
-                                <rect key="frame" x="98.5" y="835" width="217" height="31"/>
+                                <rect key="frame" x="101.5" y="835" width="211" height="31"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="16"/>
                                 <state key="normal" title="Tentar com uma nova música">
                                     <color key="titleColor" name="button"/>
