@@ -16,12 +16,7 @@ class ArtistViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //configuracao do text field
-        artistTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: artistTextField.frame.height))
-        artistTextField.leftViewMode = .always
-        artistTextField.layer.borderWidth = 2
-        artistTextField.layer.borderColor = UIColor(named: "button")?.cgColor
-        artistTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("placeholderArtist", comment: ""), attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button")!])
-        
+   
         //tapGesture para clicar fora do keyboard
         configureTapGesture()
         

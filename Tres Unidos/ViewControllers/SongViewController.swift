@@ -8,33 +8,39 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITextFieldDelegate{
-    @IBOutlet var songTextField: UITextField!
+class SongViewController: UIViewController, UITextFieldDelegate{
+   // @IBOutlet var songTextField: UITextField!
+    var songView = SongView()
+    weak var coordinator: AppCoordinator?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //configuracao do text field
-        songTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: songTextField.frame.height))
-        songTextField.leftViewMode = .always
-        songTextField.layer.borderWidth = 2
-        songTextField.layer.borderColor = UIColor(named: "button")?.cgColor
-        songTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("placeholderSong", comment: ""), attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button")!])
+        view.backgroundColor = UIColor(named: "background")
+        view.addSubview(songView)
         
         //tapGesture para clicar fora do keyboard
         configureTapGesture()
         
         //delegate para o botao de return dar dismiss no keyboard
-        self.songTextField.delegate = self
-        
-        //text field movimentar de acordo com o keyboard
-        NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        songView.songTextField.delegate = self
+        configureTextFieldWithKeyboard()
 
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        songView.frame = view.bounds
+    }
+    
+    private func configureTextFieldWithKeyboard(){
+        //text field movimentar de acordo com o keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(SongViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SongViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     //tapGesture para dar dismiss no keyboard ao clicar fora dele
     private func configureTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.handleTap))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SongViewController.handleTap))
         view.addGestureRecognizer(tapGesture)
     }
     @objc func handleTap() {
@@ -64,18 +70,18 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
     //Passa o nome da música para o próximo view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ArtistSegue", case let nextVC = segue.destination as? ArtistViewController {
-            nextVC?.song = songTextField.text
+            nextVC?.song = songView.songTextField.text
         }
     }
     
     //limpar campo de text field
     override func viewWillAppear(_ animated: Bool) {
-        self.songTextField.text = ""
+        songView.songTextField.text = ""
     }
     
     // tratamento para campos vazios
     @IBAction func avancarButton() {
-        if songTextField.text == "" {
+        if songView.songTextField.text == "" {
             alerta()
         }
     }
@@ -91,6 +97,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        songTextField.layer.borderColor = UIColor(named: "button")?.cgColor
+        songView.songTextField.layer.borderColor = UIColor(named: "button")?.cgColor
     }
 }
